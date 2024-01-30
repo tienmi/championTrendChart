@@ -1,6 +1,6 @@
 {
     "name": "champion-trend-chart",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "main": "./championTrendChart",
     "description": "Vue3 quickly generates components for champion trend charts",
