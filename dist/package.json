@@ -1,0 +1,15 @@
+{
+    "name": "champion-trend-chart",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "./championTrendChart",
+    "description": "Vue3 quickly generates components for champion trend charts",
+    "keywords": [
+        "vue3",
+        "champion trend chart",
+        "canvas"
+    ],
+    "author": "tienmi",
+    "repository": "https://github.com/tienmi/championTrendChart",
+    "homepage": "https://github.com/tienmi/championTrendChart"
+}
