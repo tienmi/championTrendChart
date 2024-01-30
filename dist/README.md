@@ -50,3 +50,11 @@ const data = [
 ```
 <ChampionTrendChart :type="type" :data="data" />
 ```
+
+### 貢獻與建議
+
+歡迎貢獻！如果您想為此組件貢獻代碼或報告問題，請訪問 GitHub 存儲庫。
+
+### 授權
+
+此組件遵循 MIT 授權。有關更多信息，請查閱 LICENSE 檔案。
