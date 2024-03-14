@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted, watch } from "vue";
-import { formatChampionData } from "./format";
-import { drawTable } from "./canvas";
+import { ref, onMounted, watch } from 'vue';
+import { formatChampionData } from './format';
+import { drawTable } from './canvas';
 
 const props = defineProps({
     data: Array,

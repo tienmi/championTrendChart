@@ -14,7 +14,7 @@ export const drawTable = (
     issueTitle,
     trendTitle
 ) => {
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
 
     // Init setting
     const startX = 0;
@@ -24,20 +24,20 @@ export const drawTable = (
     const columns = 10;
     const columnWidth = 100;
     const columnHeignt = 100;
-    const layerBg = "#F5F5F5";
-    const defaultBg = "#fff";
-    const notWinBg = "#E7E7E7";
+    const layerBg = '#F5F5F5';
+    const defaultBg = '#fff';
+    const notWinBg = '#E7E7E7';
     const extraField = [
-        { title: "出现总次数", value: "total" },
-        { title: "平均遗漏值", value: "averageMissing" },
-        { title: "最大遗漏值", value: "maxMissing" },
-        { title: "最大连出值", value: "maxContinuous" },
+        { title: '出现总次数', value: 'total' },
+        { title: '平均遗漏值', value: 'averageMissing' },
+        { title: '最大遗漏值', value: 'maxMissing' },
+        { title: '最大连出值', value: 'maxContinuous' },
     ];
-    const textColor = "#63666F";
-    const extraColor = "#1E8EF5";
-    const contentSize = "40px";
+    const textColor = '#63666F';
+    const extraColor = '#1E8EF5';
+    const contentSize = '40px';
     const lineWidth = 2;
-    const lineColor = "rgba(0, 0, 0, 0.10)";
+    const lineColor = 'rgba(0, 0, 0, 0.10)';
     const winningPosition = {};
 
     canvas.height =
@@ -51,12 +51,12 @@ export const drawTable = (
         height,
         x,
         y,
-        bgColor = "#fff",
-        fontSize = "56px",
+        bgColor = '#fff',
+        fontSize = '56px',
         heighlight = false,
         fieldIndex,
         color = textColor,
-        fontWeight = "400",
+        fontWeight = '400',
     }) => {
         // Draw column
         ctx.beginPath();
@@ -77,7 +77,7 @@ export const drawTable = (
         const drawHeighlight = () => {
             ctx.beginPath();
             const circleRadius = 40;
-            ctx.fillStyle = "#F24848";
+            ctx.fillStyle = '#F24848';
             const position = {
                 x: x + columnWidth / 2,
                 y: y + columnHeignt / 2,
@@ -91,9 +91,9 @@ export const drawTable = (
         // Draw content
         const drawContent = () => {
             ctx.font = `${fontWeight} ${fontSize} PingFang SC`;
-            ctx.fillStyle = heighlight ? "#fff" : color;
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
+            ctx.fillStyle = heighlight ? '#fff' : color;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
             ctx.fillText(
                 text < 0 ? Math.abs(text) : text,
                 x + width / 2,
@@ -116,8 +116,8 @@ export const drawTable = (
             x: startX,
             y: startY,
             bgColor: layerBg,
-            fontSize: "40px",
-            fontWeight: "500",
+            fontSize: '40px',
+            fontWeight: '500',
         });
         for (let i = 0; i < newData.issue.length; i++) {
             drawColumn({
@@ -173,7 +173,7 @@ export const drawTable = (
     };
 
     const drawRedLine = () => {
-        ctx.strokeStyle = "#F24848";
+        ctx.strokeStyle = '#F24848';
         ctx.lineWidth = 4;
 
         const leng = Object.keys(winningPosition).length;
@@ -187,9 +187,9 @@ export const drawTable = (
 
         for (let i = 0; i < leng; i++) {
             ctx.font = `400 ${contentSize} PingFang SC`;
-            ctx.fillStyle = "#fff";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
+            ctx.fillStyle = '#fff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
             ctx.fillText(
                 Math.abs(winningPosition[i].text),
                 winningPosition[i].x,
