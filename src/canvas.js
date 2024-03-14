@@ -7,7 +7,13 @@
  * type for trend ranking
  */
 
-export const drawTable = (canvas, newData, type = 1) => {
+export const drawTable = (
+    canvas,
+    newData,
+    type = 1,
+    issueTitle,
+    trendTitle
+) => {
     const ctx = canvas.getContext('2d');
 
     // Init setting
@@ -21,19 +27,6 @@ export const drawTable = (canvas, newData, type = 1) => {
     const layerBg = '#F5F5F5';
     const defaultBg = '#fff';
     const notWinBg = '#E7E7E7';
-    const issueTitle = '期号';
-    const trendTitle = [
-        '冠军走势',
-        '亚军走势',
-        '第三名走势',
-        '第四名走势',
-        '第五名走势',
-        '第六名走势',
-        '第七名走势',
-        '第八名走势',
-        '第九名走势',
-        '第十名走势'
-    ];
     const extraField = [
         { title: '出现总次数', value: 'total' },
         { title: '平均遗漏值', value: 'averageMissing' },
@@ -48,7 +41,9 @@ export const drawTable = (canvas, newData, type = 1) => {
     const winningPosition = {};
 
     canvas.height =
-        headHeight + columnHeignt * newData.issue.length + columnHeignt * extraField.length;
+        headHeight +
+        columnHeignt * newData.issue.length +
+        columnHeignt * extraField.length;
 
     const drawColumn = ({
         text,
@@ -99,7 +94,11 @@ export const drawTable = (canvas, newData, type = 1) => {
             ctx.fillStyle = heighlight ? '#fff' : color;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(text < 0 ? Math.abs(text) : text, x + width / 2, y + height / 2);
+            ctx.fillText(
+                text < 0 ? Math.abs(text) : text,
+                x + width / 2,
+                y + height / 2
+            );
         };
 
         if (heighlight) {
@@ -249,7 +248,10 @@ export const drawTable = (canvas, newData, type = 1) => {
                     width: columnWidth,
                     height: columnHeignt,
                     x: issueSize + columnWidth * i,
-                    y: issueLeng * columnHeignt + headHeight + field * columnHeignt,
+                    y:
+                        issueLeng * columnHeignt +
+                        headHeight +
+                        field * columnHeignt,
                     bgColor: handleBg(field) ? defaultBg : layerBg,
                     fontSize: contentSize,
                     color: extraColor

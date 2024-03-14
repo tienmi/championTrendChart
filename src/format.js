@@ -1,6 +1,5 @@
-export const formatChampionData = data => {
+export const formatChampionData = (data, rankingNumber) => {
     // init setting
-    const rankingNumber = 10;
     const newData = {
         issue: [],
         trendField: {},
@@ -46,14 +45,21 @@ export const formatChampionData = data => {
                     );
                 } else {
                     const lastValue = target[target.length - 1];
-                    target.push(target.length === 0 || lastValue < 0 ? 1 : lastValue + 1);
+                    target.push(
+                        target.length === 0 || lastValue < 0 ? 1 : lastValue + 1
+                    );
                 }
                 // Average missing value
                 if (dataLocation === i) {
-                    extra.averageMissing = Math.round(data.length / (extra.total + 1));
+                    extra.averageMissing = Math.round(
+                        data.length / (extra.total + 1)
+                    );
                 }
                 // Max missing value
-                extra.maxMissing = Math.max(extra.maxMissing, target[target.length - 1]);
+                extra.maxMissing = Math.max(
+                    extra.maxMissing,
+                    target[target.length - 1]
+                );
             }
         }
     }
