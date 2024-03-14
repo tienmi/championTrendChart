@@ -31,7 +31,7 @@ export const drawTable = (
         { title: '出现总次数', value: 'total' },
         { title: '平均遗漏值', value: 'averageMissing' },
         { title: '最大遗漏值', value: 'maxMissing' },
-        { title: '最大连出值', value: 'maxContinuous' },
+        { title: '最大连出值', value: 'maxContinuous' }
     ];
     const textColor = '#63666F';
     const extraColor = '#1E8EF5';
@@ -56,7 +56,7 @@ export const drawTable = (
         heighlight = false,
         fieldIndex,
         color = textColor,
-        fontWeight = '400',
+        fontWeight = '400'
     }) => {
         // Draw column
         ctx.beginPath();
@@ -81,7 +81,7 @@ export const drawTable = (
             const position = {
                 x: x + columnWidth / 2,
                 y: y + columnHeignt / 2,
-                text,
+                text
             };
             ctx.arc(position.x, position.y, circleRadius, 0, Math.PI * 2);
             ctx.fill();
@@ -117,7 +117,7 @@ export const drawTable = (
             y: startY,
             bgColor: layerBg,
             fontSize: '40px',
-            fontWeight: '500',
+            fontWeight: '500'
         });
         for (let i = 0; i < newData.issue.length; i++) {
             drawColumn({
@@ -127,7 +127,7 @@ export const drawTable = (
                 x: startX,
                 y: headHeight + i * columnHeignt,
                 bgColor: i % 2 === 0 ? defaultBg : layerBg,
-                fontSize: contentSize,
+                fontSize: contentSize
             });
         }
     };
@@ -140,7 +140,7 @@ export const drawTable = (
             x: issueSize,
             y: startY,
             bgColor: layerBg,
-            fontSize: contentSize,
+            fontSize: contentSize
         });
         for (let i = 1; i <= columns; i++) {
             drawColumn({
@@ -150,7 +150,7 @@ export const drawTable = (
                 x: issueSize + columnWidth * (i - 1),
                 y: columnHeignt,
                 bgColor: layerBg,
-                fontSize: contentSize,
+                fontSize: contentSize
             });
         }
         for (let i = 0; i < newData.trendField[type].length; i++) {
@@ -166,7 +166,7 @@ export const drawTable = (
                     bgColor: num % 2 === 0 ? layerBg : defaultBg,
                     fontSize: contentSize,
                     heighlight: rowData < 0,
-                    fieldIndex: num,
+                    fieldIndex: num
                 });
             }
         }
@@ -213,7 +213,7 @@ export const drawTable = (
                     bgColor: notWinBg,
                     fontSize: contentSize,
                     heighlight: rowData < 0,
-                    fieldIndex: num,
+                    fieldIndex: num
                 });
             }
         }
@@ -221,7 +221,7 @@ export const drawTable = (
 
     const drawExtraData = () => {
         const issueLeng = newData.issue.length;
-        const handleBg = (idx) => {
+        const handleBg = idx => {
             if (issueLeng % 2 === 0) {
                 return idx % 2 === 0;
             } else {
@@ -237,7 +237,7 @@ export const drawTable = (
                 y: issueLeng * columnHeignt + headHeight + i * columnHeignt,
                 bgColor: handleBg(i) ? defaultBg : layerBg,
                 fontSize: contentSize,
-                color: extraColor,
+                color: extraColor
             });
         }
         const extraData = newData.extra[type];
@@ -254,7 +254,7 @@ export const drawTable = (
                         field * columnHeignt,
                     bgColor: handleBg(field) ? defaultBg : layerBg,
                     fontSize: contentSize,
-                    color: extraColor,
+                    color: extraColor
                 });
             }
         }

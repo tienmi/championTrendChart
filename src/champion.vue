@@ -8,7 +8,7 @@ const props = defineProps({
     type: Number,
     issueTitle: String,
     trendTitle: Array,
-    rankingNumber: Number,
+    rankingNumber: Number
 });
 
 const canvasRef = ref(null);

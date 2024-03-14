@@ -3,7 +3,7 @@ export const formatChampionData = (data, rankingNumber) => {
     const newData = {
         issue: [],
         trendField: {},
-        extra: {},
+        extra: {}
     };
     const dataLocation = data.length - 1;
 
@@ -14,7 +14,7 @@ export const formatChampionData = (data, rankingNumber) => {
             total: 0,
             maxMissing: 0,
             averageMissing: 0,
-            maxContinuous: 0,
+            maxContinuous: 0
         }));
     }
 
