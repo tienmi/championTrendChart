@@ -1,8 +1,8 @@
 {
     "name": "champion-trend-chart",
-    "version": "0.0.0",
+    "version": "1.0.1",
     "type": "module",
-    "main": "dist/championTrendChart",
+    "main": "./championTrend.js",
     "scripts": {
         "dev": "vite",
         "build": "vite build",

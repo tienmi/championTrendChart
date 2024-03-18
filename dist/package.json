@@ -1,15 +1,19 @@
 {
     "name": "champion-trend-chart",
-    "version": "1.0.1",
+    "version": "1.0.5",
     "type": "module",
-    "main": "./championTrendChart",
-    "description": "Vue3 quickly generates components for champion trend charts",
-    "keywords": [
-        "vue3",
-        "champion trend chart",
-        "canvas"
-    ],
-    "author": "tienmi",
-    "repository": "https://github.com/tienmi/championTrendChart",
-    "homepage": "https://github.com/tienmi/championTrendChart"
+    "main": "./championTrend.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.3.11"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.5.2",
+        "vite": "^5.0.8"
+    },
+    "repository": "https://github.com/tienmi/championTrendChart"
 }
