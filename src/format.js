@@ -1,4 +1,4 @@
-export const formatChampionData = (data, rankingNumber) => {
+export const formatChampionData = (data, rankingNumber, firstNumber) => {
     // init setting
     const newData = {
         issue: [],
@@ -8,7 +8,7 @@ export const formatChampionData = (data, rankingNumber) => {
     const dataLocation = data.length - 1;
 
     // init trendField
-    for (let i = 1; i <= rankingNumber; i++) {
+    for (let i = firstNumber; i <= rankingNumber; i++) {
         newData.trendField[i] = Array.from({ length: rankingNumber }, () => []);
         newData.extra[i] = Array.from({ length: rankingNumber }, () => ({
             total: 0,
