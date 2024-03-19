@@ -8,7 +8,8 @@ const props = defineProps({
     type: Number,
     issueTitle: String,
     trendTitle: Array,
-    rankingNumber: Number
+    rankingNumber: Number,
+    firstNumber: Number
 });
 
 const canvasRef = ref(null);
@@ -22,7 +23,11 @@ onMounted(() => {
 watch(
     () => props.data,
     () => {
-        const newData = formatChampionData(props.data, props.rankingNumber);
+        const newData = formatChampionData(
+            props.data,
+            props.rankingNumber,
+            props.firstNumber
+        );
         const canvas = canvasRef.value;
         drawTable(
             canvas,
